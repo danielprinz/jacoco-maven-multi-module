@@ -51,19 +51,19 @@
 				</dependencies>
 			</plugin>
 			<plugin>
-          <groupId>org.jacoco</groupId>
-          <artifactId>jacoco-maven-plugin</artifactId>
-          <version>${jacoco-maven-plugin.version}</version>
-          <executions>
-					  <!-- https://www.eclemma.org/jacoco/trunk/doc/prepare-agent-mojo.html -->
-            <execution>
-                <id>pre-unit-test</id>
-                <goals>
-                    <goal>prepare-agent</goal>
-                </goals>
-            </execution>
-          </executions>
-      </plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco-maven-plugin.version}</version>
+				<executions>
+					<!-- https://www.eclemma.org/jacoco/trunk/doc/prepare-agent-mojo.html -->
+					<execution>
+						<id>pre-unit-test</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>

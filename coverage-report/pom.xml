@@ -8,41 +8,41 @@
 		<version>1.0.0</version>
 	</parent>
 
-  <artifactId>coverage-report</artifactId>
-  <packaging>pom</packaging>
+	<artifactId>coverage-report</artifactId>
+	<packaging>pom</packaging>
 
-  <dependencies>
-    <dependency>
-    		<groupId>io.github.danielprinz</groupId>
-    		<artifactId>cat-service</artifactId>
-    		<version>${project.version}</version>
-    </dependency>
-    <dependency>
-    		<groupId>io.github.danielprinz</groupId>
-    		<artifactId>dog-service</artifactId>
-    		<version>${project.version}</version>
-    </dependency>
-  </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>io.github.danielprinz</groupId>
+			<artifactId>cat-service</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.danielprinz</groupId>
+			<artifactId>dog-service</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
 
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.jacoco</groupId>
-          <artifactId>jacoco-maven-plugin</artifactId>
-          <version>${jacoco-maven-plugin.version}</version>
-          <executions>
-              <!-- https://www.eclemma.org/jacoco/trunk/doc/report-aggregate-mojo.html -->
-							<execution>
-								<phase>verify</phase>
-								<goals>
-									<goal>report-aggregate</goal>
-								</goals>
-                <configuration>
-                  <outputDirectory>${project.basedir}/target</outputDirectory>
-                </configuration>
-							</execution>
-          </executions>
-      </plugin>
-    </plugins>
-  </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco-maven-plugin.version}</version>
+				<executions>
+					<!-- https://www.eclemma.org/jacoco/trunk/doc/report-aggregate-mojo.html -->
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>report-aggregate</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.basedir}/target</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

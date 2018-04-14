@@ -18,6 +18,7 @@
 	<modules>
 		<module>cat-service</module>
 		<module>dog-service</module>
+		<module>coverage-report</module>
 	</modules>
 
 	<dependencies>
@@ -50,26 +51,19 @@
 				</dependencies>
 			</plugin>
 			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>${jacoco-maven-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>pre-unit-test</id>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>post-unit-test</id>
-						<phase>test</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>${jacoco-maven-plugin.version}</version>
+          <executions>
+					  <!-- https://www.eclemma.org/jacoco/trunk/doc/prepare-agent-mojo.html -->
+            <execution>
+                <id>pre-unit-test</id>
+                <goals>
+                    <goal>prepare-agent</goal>
+                </goals>
+            </execution>
+          </executions>
+      </plugin>
 		</plugins>
 	</build>
-
 </project>
